@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="toggle-buttons">
+    <label><input type="checkbox" id="show-transliteration" checked> Show Transliteration</label>
+    <label><input type="checkbox" id="show-english" checked> Show Translation</label>
+</div>
+
+  <section class="scripture-container">
+    <h2>{{ scripture.title }}</h2>
+
+    
+
+    <div class="verses">
+      {% for verse in scripture.verses %}
+        <div class="verse">
+          <p class="gurmukhi">{{ verse.gurmukhi }}</p>
+          <p class="transliteration">{{ verse.transliteration }}</p>
+          <p class="english">{{ verse.english }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}
